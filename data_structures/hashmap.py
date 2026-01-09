@@ -7,7 +7,7 @@ class HashMap():
         return hash(key) % self.size
 
     def put(self, key, value):
-        index = delf._hash(key)
+        index = self._hash(key)
         bucket = self.buckets[index]
 
         for i, (k, v) in enumerate(bucket):
@@ -23,7 +23,7 @@ class HashMap():
 
         for k, v in bucket:
             if k == key:
-                return value
+                return v
             
         return None
 
@@ -35,8 +35,23 @@ class HashMap():
             if k == key:
                 del bucket[i]
                 return
-    
+
+    def __str__(self):
+        return str([{k: v for k, v in bucket} for bucket in self.buckets if bucket])
+
+
+hash_map = HashMap()
+
+hash_map.put("joao", 1000)
+hash_map.put("maria", 25)
+hash_map.put(17, ("cachorro", 13))
+
+print(hash_map)
+
+print(hash_map.get("joao"))
+
+hash_map.remove("joao")
+
+print(hash_map.get("joao"))
 
 ## TODO: add resizing, load factor, and use linked-lists.
-
-

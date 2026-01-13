@@ -6,4 +6,7 @@ class Solution:
             diff = target - n
             if diff in hashmap:
                 return [hashmap[diff], i]
-            hashmap[n] = i
+            hashmap[n] = 
+            
+# Time Complexity: O(n) because we traverse the list once.
+# Space Complexity: O(n) for storing elements in the hashmap.

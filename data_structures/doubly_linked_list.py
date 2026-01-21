@@ -35,7 +35,7 @@ class DoublyLinkedList:
     def remove_from_front():
         if not self.head:
             return None
-        removed_value = self.head.next
+        removed_value = self.head.value
         if self.head == self.tail:
             self.head = None
             self.tail = None

@@ -23,6 +23,34 @@ class SinglyLinkedList:
         removed_value = self.head.value
         self.head = self.head.next
         return removed_value
+
+
+    def add_to_end(self, value):
+        new_node = Node(value)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+
+    def remove_from_end(self):
+        if not self.head:
+            return None
+        if not self.head.next:
+            removed_value = self.head.value
+            self.head = None
+            return removed_value
+        prev = self.head
+        current = self.head.next
+        while current.next:
+            prev = current
+            current = current.next
+        removed_value = current.value
+        prev.next = None
+        return removed_value
         
             
         

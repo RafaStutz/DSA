@@ -21,7 +21,7 @@ class DoublyLinkedList:
             self.head = new_node
 
 
-    def add_to_end():
+    def add_to_end(self, value):
         new_node = Node(value)
         if not self.tail:
             self.head = new_node
@@ -32,7 +32,7 @@ class DoublyLinkedList:
             self.tail = new_node
 
 
-    def remove_from_front():
+    def remove_from_front(self):
         if not self.head:
             return None
         removed_value = self.head.value
@@ -45,7 +45,7 @@ class DoublyLinkedList:
         return removed_value
 
 
-    def remove_from_end():
+    def remove_from_end(self):
         if not self.tail:
             return None
         removed_value = self.tail.value

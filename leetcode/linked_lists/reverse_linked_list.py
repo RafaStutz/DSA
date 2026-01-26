@@ -9,12 +9,15 @@ class Solution:
         previous = None
 
         while current:
-            temp = current.next             # Store next node
+            nxt = current.next             # Store next node in a temporary variable
             current.next = previous         # Reverse the pointer/link
-            previous = current              # Move previous to current node
-            current = temp                  # Move to the next node
+            previous = current              # Update previous node: move it to current node
+            current = nxt                   # Update current node: move it to the next node
         return previous
 
+
+# Time Complexity: O(n) - We traverse the entire linked list once.
+# Space Complexity: O(1) - We use a constant amount of extra space.
 
 
 
